@@ -1,0 +1,237 @@
+html {
+  font-size: 14px;
+}
+
+/* Global Styles */
+
+body {
+  font-family: "Avenir", sans-serif;
+  font-size: 1rem;
+  height: 100%;
+}
+
+header {
+  background-color: white;
+}
+
+.navbar {
+  display: flex;
+  max-width: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #000;
+  z-index: 1;
+}
+
+/* Strikethrough Nav */
+
+nav {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav ul li {
+display: inline-block;
+padding: 0 20px;
+margin-top: 8px;
+}
+
+nav ul li span {
+position: relative;
+display: block;
+cursor: pointer;
+}
+
+nav ul li span:before, span:after {
+content: '';
+position: absolute;
+width: 0%;
+height: 2px;
+top: 40%;
+margin-top: -0.5px;
+background: #000;
+}
+
+nav ul li span:before {
+left: -2.5px;
+}
+
+nav ul li span:after {
+right: 2.5px;
+background: #000;
+transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+nav ul li span:hover:before {
+background: #000;
+width: 100%;
+transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+nav ul li span:hover:after {
+background: transparent;
+width: 100%;
+transition: 0s;
+}
+
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+nav ul li a:hover::after {
+  width: 0;
+}
+
+
+
+/* Button CSS*/
+
+a.animated-button.thar-three {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #000;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); 0s;
+  padding: 16px 8px 10px 8px;
+  text-align: center;
+  margin-left: 30px;
+  top: 0;
+  letter-spacing: 5px;
+  z-index: 5;
+
+}
+
+a.animated-button.thar-three:hover {
+  color: #fff !important;
+  background-color: transparent;
+}
+
+a.animated-button.thar-three:hover:before {
+  left: 0%;
+  right: auto;
+  width: 100%;
+}
+
+a.animated-button.thar-three:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #000;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); 0s;
+}
+
+/* Hero Section */
+
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 960px;
+  height: calc(100vh - 145px);
+}
+
+.hero-text > :first-child {
+    margin-top: 0
+}
+
+.hero-text > :last-child {
+    margin-bottom: 0
+}
+
+.hero-container-med {
+  display: flex;
+  max-width: 1040px;
+  padding-right: 3.57rem;
+  padding-left: 3.57rem;
+  padding-top: 12.857rem;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+
+.lead, .cta-button {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.home-hero-head  {
+  font-size: 2.85rem;
+  line-height: 1.1;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.hero-button-scroll {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center
+
+}
+
+.cta-button {
+  border: none;
+  background: transparent;
+  color: #adadad;
+  padding-bottom: 4em;
+  position: relative;
+  cursor: pointer;
+  transition: 0.4s;
+  display: flex;
+}
+
+.cta-button:hover {
+  color: #000;
+  transition: 0.4s;
+
+}
+
+.cta-button:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  height: 3em;
+  background-color: currentColor;
+  content: ""
+}
+
+.next-section {
+  background: black;
+  color: white;
+  padding: 200px 0;
+  text-align: center;
+}
