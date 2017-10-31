@@ -65,7 +65,6 @@ width: 0%;
 height: 2px;
 top: 40%;
 margin-top: -0.5px;
-background: #000;
 }
 
 nav ul li span:before {
@@ -100,9 +99,21 @@ nav ul li a:hover::after {
   width: 0;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 @media only screen and (max-width: 1020px) {
   .main-nav {
     display: none;
+  }
+
+  a .animated-button .thar-three {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
   }
 }
 
@@ -150,6 +161,14 @@ a.animated-button.thar-three:before {
   color: #000 !important;
   background: #000;
   transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); 0s;
+}
+
+@media only screen and (max-width: 1020px) {
+
+  a.animated-button.thar-three {
+    display: none;
+  }
+
 }
 
 /* Hero Section */
