@@ -5,13 +5,16 @@ html {
 /* Global Styles */
 
 body {
-  font-family: "Avenir", sans-serif;
+  font-family: "Avenir", "Prompt-100", "Prompt", sans-serif;
   font-size: 1rem;
   height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
 }
 
 header {
-  background-color: white;
+  background-color: #fff;
 }
 
 .navbar {
@@ -97,6 +100,12 @@ nav ul li a:hover::after {
   width: 0;
 }
 
+@media only screen and (max-width: 1020px) {
+  .main-nav {
+    display: none;
+  }
+}
+
 
 
 /* Button CSS*/
@@ -156,11 +165,11 @@ a.animated-button.thar-three:before {
 }
 
 .hero-text > :first-child {
-    margin-top: 0
+  margin-top: 0
 }
 
 .hero-text > :last-child {
-    margin-bottom: 0
+  margin-bottom: 0
 }
 
 .hero-container-med {
@@ -185,6 +194,7 @@ a.animated-button.thar-three:before {
 
 .home-hero-head  {
   font-size: 2.85rem;
+  font-weight: 100;
   line-height: 1.1;
   margin-top: 1rem;
   display: flex;
