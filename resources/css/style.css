@@ -2,10 +2,12 @@ html {
   font-size: 14px;
 }
 
+
+
 /* Global Styles */
 
 body {
-  font-family: "Avenir", "Prompt-100", "Prompt", sans-serif;
+  font-family: "Avenir", "Prompt", "Prompt", sans-serif;
   font-size: 1rem;
   height: 100%;
   text-rendering: optimizeLegibility;
@@ -112,9 +114,43 @@ nav ul li a:hover::after {
     display: none;
   }
 
+
   .mobile-nav {
-    display: block;
+  position: relative;
+  display: block;
+  cursor: pointer;
   }
+
+  .mobile-nav:before, .mobile-nav:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  top: 40%;
+  margin-top: -0.5px;
+  }
+
+  .mobile-nav:before {
+  left: -2.5px;
+  }
+
+  .mobile-nav:after {
+  right: 2.5px;
+  background: #000;
+  transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .mobile-nav:hover:before {
+  background: #000;
+  width: 100%;
+  transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .mobile-nav:hover:after {
+  background: transparent;
+  width: 100%;
+  }
+
 }
 
 
@@ -240,6 +276,8 @@ a.animated-button.thar-three:before {
   cursor: pointer;
   transition: 0.4s;
   display: flex;
+  border: none;
+  outline: none;
 }
 
 .cta-button:hover {
