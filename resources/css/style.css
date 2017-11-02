@@ -13,6 +13,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   background: #fff;
+  margin: 0 auto;
+
 }
 
 header {
@@ -92,18 +94,20 @@ transition: 0s;
 }
 
 nav ul li a {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   color: #000;
 }
+
 
 nav ul li a:hover::after {
   width: 0;
 }
 
-.mobile-nav {
+.mobile-nav, #menuArea {
   display: none;
 }
+
 
 @media only screen and (max-width: 1020px) {
   .main-nav {
@@ -114,11 +118,18 @@ nav ul li a:hover::after {
     display: none;
   }
 
+/* Mobile Nav */
+
+
 
   .mobile-nav {
   position: relative;
   display: block;
   cursor: pointer;
+  width: 60vw;
+  line-height: 2.4;
+  font-size: 1.2rem;
+  color: #fff;
   }
 
   .mobile-nav:before, .mobile-nav:after {
@@ -136,12 +147,12 @@ nav ul li a:hover::after {
 
   .mobile-nav:after {
   right: 2.5px;
-  background: #000;
+  background: #fff;
   transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .mobile-nav:hover:before {
-  background: #000;
+  background: #fff;
   width: 100%;
   transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
@@ -151,6 +162,148 @@ nav ul li a:hover::after {
   width: 100%;
   }
 
+  #menuArea {
+    display: block;
+  }
+
+  input {
+    display: none;
+  }
+
+  .open {
+    background-color: #000;
+    width: 24px;
+    height: 2px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    top: 8px;
+  }
+
+  .open:before {
+    content: "";
+    background-color: #000;
+    width: 24px;
+    height: 2px;
+    display: block;
+    position: relative;
+    top: -6px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+    delay: 0.3s ease;
+  }
+
+  .open:after {
+    content: "";
+    background-color: #000;
+    width: 24px;
+    height: 2px;
+    display: block;
+    position: relative;
+    top: 4px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+  }
+
+  .menuOpen {
+    width: 24px;
+    height: 20px;
+    display: block;
+    padding: 15px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .menuOpen:hover .open:before {
+    top: -8px;
+  }
+
+  .menuOpen:hover .open:after {
+    top: 6px;
+  }
+
+  .menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #1b1b1c;
+    z-index: 1;
+  }
+
+  .menu label {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-size: 100%;
+    cursor: pointer;
+  }
+
+  .menu .menuContent {
+    position: relative;
+    top: 50%;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: -170px;
+  }
+
+  .menuEffects {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .menuEffects ul {
+    transform: translateY(0%);
+    transition: all 0.5s;
+  }
+
+  .menu .menuEffects .menuContent ul li a {
+    display: block;
+  }
+
+  #menuToggle:checked ~ .menuEffects {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+  }
+
+  #menuToggle:checked ~ .menuEffects ul {
+    opacity: 1;
+  }
+
+  #menuToggle:checked ~ .menuOpen .open {
+    background-color: transparent;
+  }
+
+  #menuToggle:checked ~ .menuOpen .open:before {
+    content: "";
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  #menuToggle:checked ~ .menuOpen .open:after {
+    content: "";
+    background-color: white;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  #menuToggle:not(:checked) ~ .menuEffects ul {
+    transform: translateY(-30%);
+  }
 }
 
 
@@ -253,6 +406,33 @@ a.animated-button.thar-three:before {
   line-height: 1.1;
   margin-top: 1rem;
   display: flex;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .home-hero-head  {
+    font-size: 2.5rem;
+    width: 75%;
+  }
+
+  .hero-container-med {
+    padding-top: 10rem;
+  }
+
+}
+
+
+@media only screen and (max-width: 700px) {
+
+  .home-hero-head  {
+    font-size: 1.8rem;
+    width: 75%;
+  }
+
+  .hero-container-med {
+    padding-top: 6rem;
+  }
+
 }
 
 .hero-button-scroll {

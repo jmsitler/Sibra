@@ -17,7 +17,7 @@
     <header>
       <div class="navbar">
         <div class="logo">
-          <img src="./resources/images/sibra-logo.png" alt="logo" width="150px">
+          <a href="index.html"><img src="./resources/images/sibra-logo.png" alt="logo" width="150px"></a>
         </div>
         <nav>
           <ul class="main-nav">
@@ -29,7 +29,28 @@
             <a href="#" class="btn btn-sm animated-button thar-three" style="width:150px;">Contact</a>
 
             <!-- Mobile Nav -->
-            <span class="mobile-nav toggle">Menu</span>
+
+            <div id="menuArea">
+              <input type="checkbox" id="menuToggle"></input>
+
+              <label for="menuToggle" class="menuOpen">
+                <div class="open"></div>
+              </label>
+
+              <div class="menu menuEffects ">
+                <label for="menuToggle"></label>
+                <div class="menuContent">
+                  <ul>
+                    <li><a class="mobile-nav" href="#">About</a></li>
+                    <li><a class="mobile-nav" href="#">FAQs</a></li>
+                    <li><a class="mobile-nav" href="#">Work</a></li>
+                    <li><a class="mobile-nav" href="#">Blog</a></li>
+                    <li><a class="mobile-nav" href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
         </nav>
       </div>
     </header>
